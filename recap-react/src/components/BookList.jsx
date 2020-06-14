@@ -1,19 +1,29 @@
 
 import React, { Component } from 'react';
-import { Row } from 'react-bootstrap';
+import { Row, FormControl } from 'react-bootstrap';
+import BookListItem from "./BookListItem"
 
 class BookList extends Component {
     state = {
-        books: []
+        books: [],
+        search: ""
     }
     render() {
         return (<>
             <Row>
                 <h1>{this.props.text}</h1>
+                <FormControl
+      placeholder="Search"
+      value={this.state.value}
+      onChange={(e) => this.setState({ search: e.currentTarget.value.toLowerCase() })}
+      
+        />
             </Row>
             <Row>
-            {this.state.books.map(book =>
-             <img src={book.img} style={{width: "200px"}} />)}
+            {this.state.books
+            .filter(book => book.title.toLowerCase().indexOf(this.state.search) !== -1 || book.category.toLowerCase().indexOf(this.state.search) !== -1)
+            .map(book =>
+             <BookListItem key={book.asin} bookInfo={book} />)}
             </Row>
             </>
         );
