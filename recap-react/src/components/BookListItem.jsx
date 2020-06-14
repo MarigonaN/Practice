@@ -7,7 +7,7 @@ class BookListItem extends Component {
         return (
             <Row>
                 <Col >
-            <Card style={{ width: '200px', height: "250px", display: "flex", margin: "0 -5px"}}>
+            <Card style={{ width: '200px', height: "250px", display: "flex", margin: " -5px", marginTop: "30px"}}>
             <Card.Img variant="top" src={this.props.bookInfo.img} />
             <Card.Body>
         <Card.Title>{this.props.bookInfo.Title}</Card.Title>
