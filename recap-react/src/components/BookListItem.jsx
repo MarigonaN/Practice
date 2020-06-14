@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap'
+import { Card, Row, Col } from 'react-bootstrap'
 
 
 class BookListItem extends Component {
     render() {
         return (
-            <Card style={{ width: '18rem' }}>
+            <Row>
+                <Col >
+            <Card style={{ width: '200px', height: "250px", display: "flex", margin: "0 -5px"}}>
             <Card.Img variant="top" src={this.props.bookInfo.img} />
             <Card.Body>
         <Card.Title>{this.props.bookInfo.Title}</Card.Title>
@@ -15,6 +17,8 @@ class BookListItem extends Component {
             
             </Card.Body>
           </Card>
+          </Col>
+          </Row>
         );
     }
 }
