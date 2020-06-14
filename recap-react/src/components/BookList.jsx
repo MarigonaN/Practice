@@ -1,4 +1,3 @@
-import React from 'react'
 
 import React, { Component } from 'react';
 
@@ -7,7 +6,7 @@ class BookList extends Component {
     render() {
         return (
             <div>
-                <h1>My Book Store</h1>
+                <h1>{this.props.text}</h1>
             </div>
         );
     }
