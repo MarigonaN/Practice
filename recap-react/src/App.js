@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <Container>
       <BookList text="My Book Store!!!"/>
-      <BookList text="My second Book Store!!!"/>
+      
       </Container>
     </div>
   );
