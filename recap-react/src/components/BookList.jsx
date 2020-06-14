@@ -8,10 +8,13 @@ class BookList extends Component {
         books: [],
         search: ""
     }
+    
+
     render() {
+        
         return (<>
             <Row>
-                <h1>{this.props.text}</h1>
+                <h1 className="mt-3">{this.props.text}</h1>
                 <FormControl
       placeholder="Search"
       value={this.state.value}
