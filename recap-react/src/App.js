@@ -6,7 +6,10 @@ import {Container} from 'react-bootstrap'
 function App() {
   return (
     <div className="App">
-      <BookList />
+      <Container>
+      <BookList text="My Book Store!!!"/>
+      <BookList text="My second Book Store!!!"/>
+      </Container>
     </div>
   );
 }
