@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Container>
-      <BookList text="My Book Store!!!"/>
+      <BookList text="My Book Store!!!" />
       
       </Container>
     </div>
