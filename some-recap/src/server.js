@@ -27,8 +27,11 @@ server.use(generisErrorHandler)
 
 console.log(listEndpoints(server))
 
-mogoose.connect("mongodb://localhost:27017/strive-books", {})
+mogoose.connect("mongodb://localhost:27017/strive-books", {useNewUrlParser: true, 
+useUnifiedTopology: true
+}).then(
+    server.listen(port, () =>{
+        console.log("running on port", port)
+    })
+)
 
-server.listen(port, () =>{
-    console.log("running on port", port)
-})
