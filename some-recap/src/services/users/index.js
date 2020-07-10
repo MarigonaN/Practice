@@ -3,8 +3,17 @@ const userSchema = require('./schema')
 
 const usersRouter = express.Router()
 
-usersRouter.get('/', async (req, res, next) => {})
-usersRouter.get('/:id', async (req, res, next) => {})
+usersRouter.get('/', async (req, res, next) => {
+    try {
+        const usersList =await userSchema.find(req.query)
+        res.send(usersList)
+    } catch (error) {
+        next(error)
+    }
+})
+usersRouter.get('/:id', async (req, res, next) => {
+    
+})
 usersRouter.post('/', async (req, res, next) => {
     try {
         const newUser = new userSchema(req.body)

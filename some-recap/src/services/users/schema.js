@@ -14,7 +14,7 @@ age: {
     required: true,
 },
 email: {
-    type: Number,
+    type: String,
     required: true,
     lowercase: true,
 },
