@@ -18,8 +18,8 @@ usersRouter.get('/', async (req, res, next) => {
 usersRouter.get('/:id', async (req, res, next) => {
     try {
         const user = await userSchema.findById(req.params.id)
+        console.log(user)
         if (user) {
-            console.log(user)
             res.send(user)
         } else {
             const error = new Error()
