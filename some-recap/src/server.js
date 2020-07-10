@@ -9,7 +9,7 @@ const booksRoutes = require('./services/books')
 const {
     notFoundHandler, 
     badRequestHandler,
-    generisErrorHandler,
+    genericErrorHandler,
 } = require('./errorHandlers')
 
 const server = express()
@@ -23,11 +23,11 @@ server.use('/books', booksRoutes)
 
 server.use(badRequestHandler)
 server.use(notFoundHandler)
-server.use(generisErrorHandler)
+server.use(genericErrorHandler)
 
 console.log(listEndpoints(server))
 
-mogoose.connect("mongodb://localhost:27017/strive-books", {useNewUrlParser: true, 
+mongoose.connect("mongodb://localhost:27017/strive-books", {useNewUrlParser: true, 
 useUnifiedTopology: true
 }).then(
     server.listen(port, () =>{

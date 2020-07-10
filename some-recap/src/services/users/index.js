@@ -3,9 +3,9 @@ const userSchema = require('./schema')
 
 const usersRouter = express.Router()
 
-booksRouter.get('/', async (req, res, next) => {})
-booksRouter.get('/:id', async (req, res, next) => {})
-booksRouter.post('/', async (req, res, next) => {
+usersRouter.get('/', async (req, res, next) => {})
+usersRouter.get('/:id', async (req, res, next) => {})
+usersRouter.post('/', async (req, res, next) => {
     try {
         const newUser = new userSchema(req.body)
         const response = await newUser.save()
@@ -14,7 +14,7 @@ booksRouter.post('/', async (req, res, next) => {
         next(error)
     }
 })
-booksRouter.put('/:id', async (req, res, next) => {})
-booksRouter.delete('/:id', async (req, res, next) => {})
+usersRouter.put('/:id', async (req, res, next) => {})
+usersRouter.delete('/:id', async (req, res, next) => {})
 
 module.exports = usersRouter
